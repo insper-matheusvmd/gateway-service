@@ -23,14 +23,23 @@ spring:
                 - Path=/insper/**
 
             - id: accounts
-              uri: http://account:8080
+              uri: http://account:8080 
               predicates:
                 - Path=/accounts/**
 
             - id: auth
-              uri: http://auth:8080
+              uri: http://auth:8080 
               predicates:
                 - Path=/auth/**
+      metrics:
+        enabled: true
+
+management:
+  endpoints:
+    web:
+      base-path: /gateway/actuator
+      exposure:
+        include: ['prometheus']
 
 logging:
   level:
