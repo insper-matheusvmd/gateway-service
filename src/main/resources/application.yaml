@@ -31,6 +31,21 @@ spring:
               uri: http://auth:8080 
               predicates:
                 - Path=/auth/**
+
+            - id: products
+              uri: http://product-service:8080
+              predicates:
+                - Path=/products/**
+
+            - id: orders
+              uri: http://order-service:8080
+              predicates:
+                - Path=/orders/**
+
+            - id: exchanges
+              uri: http://exchange-service:8080
+              predicates:
+                - Path=/exchanges/**
       metrics:
         enabled: true
 
